@@ -2,9 +2,9 @@
 ### Introduction to algorithm
 A Levenshtein Automaton implemented in C#, for fuzzy searching.
 
-Given a libary of words, and a given original word W, Levenshtein Automaton can find all the words similar to W from the libary. The similarity is specified by Levenshtein distance.
+Given a libary of words, and an original word W, Levenshtein Automaton can find all the words similar to W from the libary. The similarity is specified by Levenshtein distance.
 
-The word library is constructed into a TRIE strcuture for searching.
+The word library is processed and used to construct a TRIE for searching.
 
 When given a word to search, Levenshtein Automaton will first created a NFA (nondeterministic finite automata) based on given word and Max levenshtein distance, then transform the NFA to DFA (deterministic finite automata).
 After getting DFA, do depth-first-search in this DFA and use TRIE node to validate the jump between states in DFA duing the DFS. When reaching final states in DFA, the word we reach in TRIE at the same time would be one of the fuzzy search results.
