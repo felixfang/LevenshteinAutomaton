@@ -11,9 +11,9 @@ After getting DFA, do depth-first-search in this DFA and use TRIE node to valida
 
 For each word in test case or libarary, non-alphabet character is removed and capital letters are transformed to lowercase in pre-processing.
 
-To view how more details about Levenshtein Automaton, please refer to http://blog.notdot.net/2010/07/Damn-Cool-Algorithms-Levenshtein-Automata.
+To view more details about Levenshtein Automaton, please refer to http://blog.notdot.net/2010/07/Damn-Cool-Algorithms-Levenshtein-Automata.
 
-The codes transforming from NFA to DFA refers related part of Regex Engine, its related codes can be viewed in this link
+The codes transforming from NFA to DFA refers related part of Regex Engine, codes can be viewed in link
 http://www.leniel.net/2009/05/regex-engine-in-csharp-match-strings.html#sthash.YON5CVU0.dpbs
 
 ### Introduction to codes
