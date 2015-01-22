@@ -9,7 +9,7 @@ using System.Diagnostics;
 namespace LevenshteinAutomaton
 {
     /// <summary>
-    /// Implements a parser for a given regular expression.
+    /// Implements a levenshtein automaton to search all the words in dictionary whose distance is smaller or equal than given value from given word.
     /// </summary>
     public class Program
     {
@@ -23,9 +23,12 @@ namespace LevenshteinAutomaton
             Regex rgx = new Regex("[^a-zA-Z]");
             IEnumerable<string> wordLib = System.IO.File.ReadAllLines(@"Data\WordLib.txt").ToList().Select(word => rgx.Replace(word, "").ToLowerInvariant());
 
+            //The max distance from word, we'll generate all the "brothers" of given word - those words whose distance are within MaxDist from given word.
+            //So the bigger MaxDist is, the more "brothers" we will generate based on given words, the longer it takes in overall fuzzy searching.
             const int MaxDist = 1;
+            
             //Load test cases
-            IEnumerable<string> testcase1 = System.IO.File.ReadAllLines(@"Data\TestCase_1_WordsToSearch.txt").ToList().Select(word => rgx.Replace(word, "").ToLowerInvariant());
+            IEnumerable<string> testcase1 = System.IO.File.ReadAllLines(@"Data\TestCase_2_WordsToSearch.txt").ToList().Select(word => rgx.Replace(word, "").ToLowerInvariant());
 
             Console.WriteLine("----Automaton way----");
             //Build Trie dictionary based on library.
